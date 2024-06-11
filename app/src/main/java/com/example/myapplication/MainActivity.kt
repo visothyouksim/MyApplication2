@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.test_jeudedes)
         val imageViewDice = findViewById<ImageView>(R.id.imageViewDice)
         val btnRollDice = findViewById<Button>(R.id.btn_roll_dice)
-        val tvResult = findViewById<TextView>(R.id.textViewDice)
+        val textViewResult = findViewById<TextView>(R.id.textViewDice)
 
         btnRollDice.setOnClickListener {
             val randomNumber = Random.nextInt(1, 7)
-            tvResult.text = randomNumber.toString()
+            textViewResult.text = randomNumber.toString()
             imageViewDice.setImageResource(getRandomDiceImage(randomNumber))
         }
 
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
             6 -> R.drawable.dice_6
-            else -> R.drawable.dice_1
+            else -> R.drawable.dice_0
         }
     }
 }
