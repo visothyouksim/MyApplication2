@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -26,29 +27,26 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        setContentView(R.layout.test_1)
-        val button = findViewById<Button>(R.id.button3)
-        button.setOnClickListener {
-            println("Changement effectué")
-            val textTop = findViewById<TextView>(R.id.textTop)
-            val textBottom = findViewById<TextView>(R.id.textBottom)
-            
-            val tempText = textTop.text.toString()
-            textTop.setText(textBottom.text.toString())
-            textBottom.setText(tempText)
+//        setContentView(R.layout.test_1)
+//        val button = findViewById<Button>(R.id.button3)
+//        button.setOnClickListener {
+//            println("Changement effectué")
+//            val textTop = findViewById<TextView>(R.id.textTop)
+//            val textBottom = findViewById<TextView>(R.id.textBottom)
+//
+//            val tempText = textTop.text.toString()
+//            textTop.setText(textBottom.text.toString())
+//            textBottom.setText(tempText)
+//        }
+
+        setContentView(R.layout.test_jeudedes)
+        val btnRollDice = findViewById<Button>(R.id.btn_roll_dice)
+        val tvResult = findViewById<TextView>(R.id.tv_result) // Assurez-vous d'avoir un TextView avec cet ID dans votre layout
+
+        btnRollDice.setOnClickListener {
+            val randomNumber = Random.nextInt(1, 7) // Génère un nombre aléatoire entre 1 et 6
+            tvResult.text = randomNumber.toString() // Affiche le résultat dans le TextView
         }
 
-
-
-
-//        var myButton : Button;
-//        var messageTextView : TextView;
-//
-//        myButton = findViewById<Button>(R.id.button)
-//        messageTextView = findViewById<TextView>(R.id.idtestajouttextview)
-//
-//        myButton.setOnClickListener(View.OnClickListener { // Set the text of the TextView to "Hello, World!"
-//            messageTextView.setText("Hello, World!")
-//        })
     }
 }
