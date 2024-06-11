@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.test_jeudedes)
         val imageViewDice = findViewById<ImageView>(R.id.imageViewDice)
-        val btnRollDice = findViewById<Button>(R.id.btn_roll_dice)
+        val btnRollDice = findViewById<Button>(R.id.btnDice)
         val textViewResult = findViewById<TextView>(R.id.textViewDice)
 
         btnRollDice.setOnClickListener {
