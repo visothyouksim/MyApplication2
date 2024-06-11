@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             println("Changement effectué")
             val textTop = findViewById<TextView>(R.id.textTop)
             val textBottom = findViewById<TextView>(R.id.textBottom)
+            
             val tempText = textTop.text.toString()
             textTop.setText(textBottom.text.toString())
             textBottom.setText(tempText)
