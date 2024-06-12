@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -49,7 +50,10 @@ class MainActivity : AppCompatActivity() {
             textViewResult.text = randomNumber.toString()
             imageViewDice.setImageResource(getRandomDiceImage(randomNumber))
         }
-
+        findViewById<Button>(R.id.nextPage).setOnClickListener{
+            val intentNextActivity : Intent = Intent(this, NextActivity::class.java)
+            startActivity(intentNextActivity)
+        }
     }
 
     private fun getRandomDiceImage(number: Int): Int {
@@ -63,4 +67,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_0
         }
     }
+
+
 }
